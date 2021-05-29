@@ -1,0 +1,17 @@
+[
+    {
+        "domain": "google.co.uk",
+        "https": true,
+        "www": true
+    },
+    {
+        "domain": "github.com",
+        "https": true,
+        "www": true
+    },
+    {
+        "domain": "gnu.org",
+        "https": false,
+        "www": true
+    },
+]
