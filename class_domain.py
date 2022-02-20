@@ -5,6 +5,8 @@
 import re
 import urllib3
 
+TIMEOUT_SECONDS = 2.0
+
 class Domain:
     def __init__(self, domain, www=True, https=True):
         self.domain = domain  # without protocol or www
@@ -20,7 +22,7 @@ class Domain:
     def __test_domain(self, url):
         http = urllib3.PoolManager()
         try:
-            res = http.request("GET", f"{url}", redirect=True)
+            res = http.request("GET", f"{url}", redirect=True, timeout=TIMEOUT_SECONDS)
             err = "OK"
             if res.status != 200:
                 err = "!!! ERROR !!!"
